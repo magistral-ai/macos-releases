@@ -1,13 +1,128 @@
-# Magistral AI — Releases macOS
+# Magistral AI
 
-Ce dépôt public héberge les **mises à jour** de l'application macOS **Magistral AI**
-(distribuée hors App Store, signée Developer ID et notarisée par Apple).
+**Orchestrez des workflows IA locaux depuis votre Mac — et depuis votre iPhone.**
 
-- `appcast.json` — flux de mise à jour interrogé par l'application.
-- Onglet **Releases** — les versions signées (`Magistral.zip`).
+---
 
-Les versions sont publiées automatiquement par l'intégration continue à chaque
-nouvelle version de l'application.
+## Téléchargement
 
-© Magistral AI. Application propriétaire. Les composants tiers redistribués et
-leurs licences sont listés dans [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md).
+**[→ Télécharger la dernière version](https://github.com/magistral-ai/mac-releases/releases/latest)**
+
+### Installation
+
+1. Télécharger `Magistral.zip` depuis la dernière [release](https://github.com/magistral-ai/mac-releases/releases/latest)
+2. Décompresser et déplacer `Magistral.app` dans `~/Applications/`
+3. Premier lancement : **clic droit → Ouvrir** (contournement Gatekeeper, une seule fois)
+
+### Prérequis
+
+- macOS 14 Sonoma ou supérieur
+- Claude Code installé et authentifié (`claude` dans le PATH)
+- GitHub CLI installé et authentifié (`gh auth login`) — nécessaire uniquement pour les workflows avec création de repo
+
+---
+
+## Fonctionnalités
+
+<details>
+<summary><strong>Webhooks — Automation depuis le web</strong></summary>
+
+Recevez des données depuis n'importe quel service externe (formulaires, Zapier, Make, scripts, Raycast…) et déclenchez automatiquement une session IA.
+
+- Endpoint unique par webhook, sécurisé par signature HMAC-SHA256
+- Création automatique d'un repo GitHub privé par client
+- Copie d'un template de projet (Next.js, statique, etc.) avec `npm install` asynchrone
+- L'IA génère le site ou le livrable dans le repo local
+- Preview instantanée sur `localhost` (serveur HTTP python ou `npm run dev`)
+- Modification ultérieure via prompt texte, glisser-déposer d'image ou dictée vocale
+- Support multi-fichiers : plusieurs images/documents transmis ensemble = une seule session IA
+
+**Exemple :** un formulaire de devis sur votre site envoie les données client → Magistral AI crée un repo privé, copie le template choisi, laisse l'IA personnaliser tout le site, et vous livre une URL de preview en quelques minutes.
+
+</details>
+
+<details>
+<summary><strong>Tâches planifiées — Automation récurrente</strong></summary>
+
+Planifiez des sessions IA selon votre propre calendrier, sans serveur externe.
+
+| Type | Description |
+|------|-------------|
+| **Une fois** | Date et heure précises |
+| **Jours de la semaine** | Ex. : lundi + mercredi à 09h00 |
+| **Mensuel** | Le 1ᵉʳ du mois à 08h00 |
+| **Intervalle** | Toutes les N minutes/heures |
+
+- Dossier de travail configurable via sélecteur de dossier
+- Pièces jointes optionnelles transmises à l'IA
+- Récupération automatique des tâches manquées (redémarrage après shutdown)
+- Historique complet des exécutions avec logs en temps réel
+- Notifications push : ✅ terminé / ❌ erreur / ⏰ manqué
+- Hérite automatiquement de tous les MCPs configurés localement
+
+**Exemples :**
+- *Veille emails urgences* — tous les lundis 09h00, l'IA lit vos emails via MCP et produit un rapport priorisé
+- *Rapport analytics mensuel* — le 1ᵉʳ du mois, l'IA interroge vos outils analytics et génère une synthèse
+- *Backup configs* — tous les dimanches 23h, l'IA archive vos dotfiles sur GitHub
+- *Nettoyage Téléchargements* — chaque vendredi 18h, l'IA trie et classe les fichiers par type
+
+</details>
+
+<details>
+<summary><strong>Surveillance de dossiers — Automation déclenchée par vos fichiers</strong></summary>
+
+Surveillez un dossier : dès qu'un fichier y apparaît ou est modifié, une session IA se déclenche automatiquement.
+
+- Déclencheurs configurables indépendamment : ajout / modification / renommage / suppression
+- Chemins exclus configurables (`.DS_Store`, caches, etc.)
+- Icône orange distinctive + badge sur chaque dossier surveillé dans le Finder
+- Quick Actions dans le menu contextuel Finder (clic droit) pour déposer des fichiers ou activer la surveillance
+- Raccourci global personnalisable pour ouvrir le panneau d'import rapide
+- Détection automatique si le dossier est supprimé (badge d'alerte)
+- Logs en temps réel et historique complet des runs
+
+</details>
+
+---
+
+### App iPhone companion
+
+Envoyez des fichiers, photos et documents depuis votre iPhone directement vers vos workflows Mac.
+
+**Appairage QR code** — scannez le QR depuis les Réglages macOS, c'est fait.
+
+**Deux destinations au choix à chaque envoi :**
+
+- **→ Webhook** : le fichier est transmis à Claude Code via le webhook de votre choix
+- **→ Dossier surveillé** : le fichier est copié directement dans le dossier, la surveillance se déclenche automatiquement
+
+**Fonctionnalités :**
+- Envoi de photos, vidéos et documents (sélection multiple)
+- Dictée vocale → transcription → envoi au webhook
+- Message/prompt optionnel joint à chaque envoi
+- Groupement automatique : plusieurs fichiers = une seule session Claude
+- Notifications push avec la vraie réponse de Claude
+- Visibilité par webhook/dossier configurable depuis le Mac (toggle ON/OFF)
+- Connexion WebSocket sécurisée, reconnexion automatique
+
+---
+
+## Mises à jour automatiques
+
+Magistral AI vérifie les mises à jour au démarrage et affiche une bannière dans le tableau de bord si une nouvelle version est disponible. L'installation se fait en un clic, sans intervention manuelle.
+
+---
+
+## Confidentialité & Données
+
+Toutes les sessions IA sont exécutées **localement** sur votre Mac, avec votre propre installation et votre propre authentification auprès du fournisseur IA de votre choix. Magistral AI n'a pas accès à vos données ni à vos échanges avec l'IA.
+
+Consultez la [licence](./LICENSE) pour les conditions d'utilisation complètes.
+
+---
+
+## Licence
+
+Ce logiciel est distribué sous licence propriétaire. Voir [LICENSE](./LICENSE).
+
+© 2025–2026 Magistral AI. Tous droits réservés.
