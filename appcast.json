@@ -1,10 +1,16 @@
 {
-  "version": "1.18.2",
-  "build": "290",
-  "url": "https://github.com/magistral-ai/mac-releases/releases/download/v1.18.2/Magistral.zip",
-  "sha256": "4102b53f11fa3a798f326235c36c958f2d9fd7001ed46a38f6c4fd64825d575d",
-  "releaseNotes": "### Nouveautés\n- Les mises à jour de l'application proviennent désormais du dépôt officiel **Magistral AI** — bascule transparente du flux de mises à jour",
+  "version": "1.18.3",
+  "build": "292",
+  "url": "https://github.com/magistral-ai/mac-releases/releases/download/v1.18.3/Magistral.zip",
+  "sha256": "87bb7f3f1fdd6286a749740dfce49e71723d458e25c858b5c2d7e5dfa904c461",
+  "releaseNotes": "### Corrections\n- Derniers textes de l'interface encore au nom « WebhookForge » remplacés par **« Magistral AI »** (panneau de connexion, menu barre, écran d'accueil, en-têtes des fichiers générés)\n- Mention de copyright « © GIANTZ » dans la fenêtre À propos",
   "minimumSystemVersion": "14.0",
-  "publishedAt": "2026-07-05T15:50:15Z",
-  "history": []
+  "publishedAt": "2026-07-05T16:03:28Z",
+  "history": [
+    {
+      "version": "1.18.2",
+      "releaseNotes": "### Nouveautés\n- Les mises à jour de l'application proviennent désormais du dépôt officiel **Magistral AI** — bascule transparente du flux de mises à jour",
+      "publishedAt": "2026-07-05T15:50:15Z"
+    }
+  ]
 }
