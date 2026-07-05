@@ -1,10 +1,10 @@
 {
-  "version": "",
-  "build": "",
-  "url": "",
-  "sha256": "",
-  "releaseNotes": "",
+  "version": "1.18.2",
+  "build": "290",
+  "url": "https://github.com/magistral-ai/mac-releases/releases/download/v1.18.2/Magistral.zip",
+  "sha256": "4102b53f11fa3a798f326235c36c958f2d9fd7001ed46a38f6c4fd64825d575d",
+  "releaseNotes": "### Nouveautés\n- Les mises à jour de l'application proviennent désormais du dépôt officiel **Magistral AI** — bascule transparente du flux de mises à jour",
   "minimumSystemVersion": "14.0",
-  "publishedAt": "",
+  "publishedAt": "2026-07-05T15:50:15Z",
   "history": []
 }
