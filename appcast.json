@@ -1,12 +1,17 @@
 {
-  "version": "1.18.3",
-  "build": "292",
-  "url": "https://github.com/magistral-ai/mac-releases/releases/download/v1.18.3/Magistral.zip",
-  "sha256": "87bb7f3f1fdd6286a749740dfce49e71723d458e25c858b5c2d7e5dfa904c461",
-  "releaseNotes": "### Corrections\n- Derniers textes de l'interface encore au nom « WebhookForge » remplacés par **« Magistral AI »** (panneau de connexion, menu barre, écran d'accueil, en-têtes des fichiers générés)\n- Mention de copyright « © GIANTZ » dans la fenêtre À propos",
+  "version": "1.19.0",
+  "build": "293",
+  "url": "https://github.com/magistral-ai/mac-releases/releases/download/v1.19.0/Magistral.zip",
+  "sha256": "25aeacafa784d2a9ace002428bc80fef5f5e140edf802abc11abd3566cd67e75",
+  "releaseNotes": "### Nouveautés\n- **Fichiers audio** (sidebar) : historique complet des audios reçus depuis l'iPhone, toutes destinations confondues (webhook / surveillance / workflow / dépôt direct) — badge d'origine, lecture intégrée, transcription affichable, recherche dans le nom et le texte transcrit\n- **Dépôt direct des vocaux iOS** : nouveau message `ios_audio_drop` — un vocal peut être déposé dans « Fichiers audio » sans webhook configuré, transcrit automatiquement en arrière-plan, sans déclencher de session Claude\n- **Bouton « Ajouter »** dans Fichiers audio : import de fichiers audio locaux du Mac avec transcription automatique\n- **Dossier partagé** (sidebar) : destination générique pour les fichiers, photos et scans envoyés depuis l'iPhone sans webhook/watcher/workflow — nouveau message `ios_shared_drop`, listing type/poids/date, simple dépôt sans traitement\n- Nouvelles entités SwiftData `AudioFile` et `SharedFile` (16 entités)",
   "minimumSystemVersion": "14.0",
-  "publishedAt": "2026-07-05T16:03:28Z",
+  "publishedAt": "2026-07-05T19:35:53Z",
   "history": [
+    {
+      "version": "1.18.3",
+      "releaseNotes": "### Corrections\n- Derniers textes de l'interface encore au nom « WebhookForge » remplacés par **« Magistral AI »** (panneau de connexion, menu barre, écran d'accueil, en-têtes des fichiers générés)\n- Mention de copyright « © GIANTZ » dans la fenêtre À propos",
+      "publishedAt": "2026-07-05T16:03:28Z"
+    },
     {
       "version": "1.18.2",
       "releaseNotes": "### Nouveautés\n- Les mises à jour de l'application proviennent désormais du dépôt officiel **Magistral AI** — bascule transparente du flux de mises à jour",
