@@ -1,12 +1,17 @@
 {
-  "version": "1.19.1",
-  "build": "294",
-  "url": "https://github.com/magistral-ai/mac-releases/releases/download/v1.19.1/Magistral.zip",
-  "sha256": "7e5e1503b1f5c0cf6c8703f140673b62a582ebe4e49925c00e913b7d81ea344e",
-  "releaseNotes": "### Corrections\n- **CRITIQUE — perte de données** : l'app stockait sa base SwiftData à l'emplacement par défaut `~/Library/Application Support/default.store`, un chemin **partagé** par tout processus macOS qui n'impose pas d'URL de store. L'agent système `icloudmailagent` (macOS 26) a migré ce fichier vers son propre modèle le 6 juillet, vidant toutes les tables de l'app (webhooks, workflows, surveillances, projets…). La base vit désormais dans un store **dédié** `~/Library/Application Support/WebhookForge/magistral.store`, hors de portée des autres processus\n- Adoption automatique de l'ancien store au premier lancement (copie vers l'emplacement dédié) — aucune action requise pour les installations saines\n- Si vos données ont déjà disparu : Réglages → Sauvegardes → « Restaurer » et choisir la dernière sauvegarde `avant-maj` du dossier Backups\n- La restauration de sauvegarde cible désormais toujours l'emplacement dédié",
+  "version": "1.20.0",
+  "build": "296",
+  "url": "https://github.com/magistral-ai/mac-releases/releases/download/v1.20.0/Magistral.zip",
+  "sha256": "9a002dcdb46d789be12e4be2f9cb8a167922cbad1c25ad567c2aa4ce4897b5df",
+  "releaseNotes": "### Nouveautés\n- **Assistant de création de workflow en 4 étapes** (remplace la génération « tout d'un bloc ») :\n  1. **Décrire** — bouton « Optimiser mon prompt » : Claude réécrit votre description (animation skeleton pendant l'appel), résultat modifiable\n  2. **Plan d'action** — Claude propose le plan étape par étape ; chaque étape est éditable (titre, instruction, suppression), plan régénérable\n  3. **Moteurs** — « Tout confier à Claude » (défaut) ou attribution manuelle : chaque étape peut être confiée à Claude, à l'IA locale par défaut, ou à un modèle local précis\n  4. **Résumé & création** — liste claire de ce qui va être mis en place (webhook + formulaire, dossier surveillé, tâche planifiée…) avec coches en temps réel pendant la création, puis arrivée directe sur la vue de détail\n- Les choix du plan validé (titres, instructions, moteurs) sont garantis dans le workflow final, même si le modèle générateur dévie\n- Le plan d'action se **révèle composant par composant** pendant la génération (streaming) au lieu d'apparaître d'un bloc à la fin\n- Pendant l'optimisation du prompt, le texte d'origine est masqué sous l'animation skeleton",
   "minimumSystemVersion": "14.0",
-  "publishedAt": "2026-07-06T19:06:35Z",
+  "publishedAt": "2026-07-06T21:24:14Z",
   "history": [
+    {
+      "version": "1.19.1",
+      "releaseNotes": "### Corrections\n- **CRITIQUE — perte de données** : l'app stockait sa base SwiftData à l'emplacement par défaut `~/Library/Application Support/default.store`, un chemin **partagé** par tout processus macOS qui n'impose pas d'URL de store. L'agent système `icloudmailagent` (macOS 26) a migré ce fichier vers son propre modèle le 6 juillet, vidant toutes les tables de l'app (webhooks, workflows, surveillances, projets…). La base vit désormais dans un store **dédié** `~/Library/Application Support/WebhookForge/magistral.store`, hors de portée des autres processus\n- Adoption automatique de l'ancien store au premier lancement (copie vers l'emplacement dédié) — aucune action requise pour les installations saines\n- Si vos données ont déjà disparu : Réglages → Sauvegardes → « Restaurer » et choisir la dernière sauvegarde `avant-maj` du dossier Backups\n- La restauration de sauvegarde cible désormais toujours l'emplacement dédié",
+      "publishedAt": "2026-07-06T19:06:35Z"
+    },
     {
       "version": "1.19.0",
       "releaseNotes": "### Nouveautés\n- **Fichiers audio** (sidebar) : historique complet des audios reçus depuis l'iPhone, toutes destinations confondues (webhook / surveillance / workflow / dépôt direct) — badge d'origine, lecture intégrée, transcription affichable, recherche dans le nom et le texte transcrit\n- **Dépôt direct des vocaux iOS** : nouveau message `ios_audio_drop` — un vocal peut être déposé dans « Fichiers audio » sans webhook configuré, transcrit automatiquement en arrière-plan, sans déclencher de session Claude\n- **Bouton « Ajouter »** dans Fichiers audio : import de fichiers audio locaux du Mac avec transcription automatique\n- **Dossier partagé** (sidebar) : destination générique pour les fichiers, photos et scans envoyés depuis l'iPhone sans webhook/watcher/workflow — nouveau message `ios_shared_drop`, listing type/poids/date, simple dépôt sans traitement\n- Nouvelles entités SwiftData `AudioFile` et `SharedFile` (16 entités)",
