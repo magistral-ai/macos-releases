@@ -1,12 +1,17 @@
 {
-  "version": "1.20.0",
-  "build": "296",
-  "url": "https://github.com/magistral-ai/mac-releases/releases/download/v1.20.0/Magistral.zip",
-  "sha256": "9a002dcdb46d789be12e4be2f9cb8a167922cbad1c25ad567c2aa4ce4897b5df",
-  "releaseNotes": "### Nouveautés\n- **Assistant de création de workflow en 4 étapes** (remplace la génération « tout d'un bloc ») :\n  1. **Décrire** — bouton « Optimiser mon prompt » : Claude réécrit votre description (animation skeleton pendant l'appel), résultat modifiable\n  2. **Plan d'action** — Claude propose le plan étape par étape ; chaque étape est éditable (titre, instruction, suppression), plan régénérable\n  3. **Moteurs** — « Tout confier à Claude » (défaut) ou attribution manuelle : chaque étape peut être confiée à Claude, à l'IA locale par défaut, ou à un modèle local précis\n  4. **Résumé & création** — liste claire de ce qui va être mis en place (webhook + formulaire, dossier surveillé, tâche planifiée…) avec coches en temps réel pendant la création, puis arrivée directe sur la vue de détail\n- Les choix du plan validé (titres, instructions, moteurs) sont garantis dans le workflow final, même si le modèle générateur dévie\n- Le plan d'action se **révèle composant par composant** pendant la génération (streaming) au lieu d'apparaître d'un bloc à la fin\n- Pendant l'optimisation du prompt, le texte d'origine est masqué sous l'animation skeleton",
+  "version": "1.20.1",
+  "build": "297",
+  "url": "https://github.com/magistral-ai/mac-releases/releases/download/v1.20.1/Magistral.zip",
+  "sha256": "b82e0870f11d3453795e30925bf388af80ccf00101b508c7e5d87346669788d9",
+  "releaseNotes": "### Corrections\n- Pied de page du tableau de bord : « Magistral — vX.Y.Z » (au lieu de « Magistral AI »)",
   "minimumSystemVersion": "14.0",
-  "publishedAt": "2026-07-06T21:24:14Z",
+  "publishedAt": "2026-07-06T22:12:13Z",
   "history": [
+    {
+      "version": "1.20.0",
+      "releaseNotes": "### Nouveautés\n- **Assistant de création de workflow en 4 étapes** (remplace la génération « tout d'un bloc ») :\n  1. **Décrire** — bouton « Optimiser mon prompt » : Claude réécrit votre description (animation skeleton pendant l'appel), résultat modifiable\n  2. **Plan d'action** — Claude propose le plan étape par étape ; chaque étape est éditable (titre, instruction, suppression), plan régénérable\n  3. **Moteurs** — « Tout confier à Claude » (défaut) ou attribution manuelle : chaque étape peut être confiée à Claude, à l'IA locale par défaut, ou à un modèle local précis\n  4. **Résumé & création** — liste claire de ce qui va être mis en place (webhook + formulaire, dossier surveillé, tâche planifiée…) avec coches en temps réel pendant la création, puis arrivée directe sur la vue de détail\n- Les choix du plan validé (titres, instructions, moteurs) sont garantis dans le workflow final, même si le modèle générateur dévie\n- Le plan d'action se **révèle composant par composant** pendant la génération (streaming) au lieu d'apparaître d'un bloc à la fin\n- Pendant l'optimisation du prompt, le texte d'origine est masqué sous l'animation skeleton",
+      "publishedAt": "2026-07-06T21:24:14Z"
+    },
     {
       "version": "1.19.1",
       "releaseNotes": "### Corrections\n- **CRITIQUE — perte de données** : l'app stockait sa base SwiftData à l'emplacement par défaut `~/Library/Application Support/default.store`, un chemin **partagé** par tout processus macOS qui n'impose pas d'URL de store. L'agent système `icloudmailagent` (macOS 26) a migré ce fichier vers son propre modèle le 6 juillet, vidant toutes les tables de l'app (webhooks, workflows, surveillances, projets…). La base vit désormais dans un store **dédié** `~/Library/Application Support/WebhookForge/magistral.store`, hors de portée des autres processus\n- Adoption automatique de l'ancien store au premier lancement (copie vers l'emplacement dédié) — aucune action requise pour les installations saines\n- Si vos données ont déjà disparu : Réglages → Sauvegardes → « Restaurer » et choisir la dernière sauvegarde `avant-maj` du dossier Backups\n- La restauration de sauvegarde cible désormais toujours l'emplacement dédié",
