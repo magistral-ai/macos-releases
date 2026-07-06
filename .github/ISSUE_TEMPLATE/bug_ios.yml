@@ -1,0 +1,90 @@
+name: 📱 Problème App iOS
+description: Signaler un problème avec l'application iPhone Magistral AI (appairage, envoi de fichiers, vocaux…)
+title: "[iOS] "
+labels: ["bug", "ios"]
+assignees: [WEB-DESIGN-PROD]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de remplir ce formulaire. Plus vous donnez de détails, plus vite le problème sera résolu.
+
+  - type: input
+    id: version_ios_app
+    attributes:
+      label: Version de l'app iOS Magistral AI
+      placeholder: "ex : 1.4.0"
+    validations:
+      required: true
+
+  - type: input
+    id: iphone
+    attributes:
+      label: Modèle d'iPhone et version iOS
+      placeholder: "ex : iPhone 15 Pro — iOS 18.5"
+    validations:
+      required: true
+
+  - type: input
+    id: version_mac
+    attributes:
+      label: Version de Magistral AI sur le Mac
+      placeholder: "ex : 1.0.0.131"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Catégorie
+      options:
+        - Appairage (scan du QR code)
+        - Connexion au Mac (statut, reconnexion)
+        - Envoi de fichiers / photos / scans
+        - Enregistrement vocal (micro, pré-écoute)
+        - Envoi de vocaux
+        - Historique des vocaux (ré-envoi)
+        - Destinations (webhook, dossier surveillé, workflow, Fichiers audio, Dossier partagé)
+        - Réglages / Déconnexion
+        - Interface (affichage, navigation)
+        - Autre
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description du problème
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Étapes pour reproduire
+      placeholder: |
+        1. Ouvrir l'app sur l'iPhone
+        2. ...
+        3. Observer que...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportement attendu
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Comportement observé
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexte additionnel
+      placeholder: "Captures d'écran, fréquence du problème, réseau (Wi-Fi / 4G / 5G)..."
