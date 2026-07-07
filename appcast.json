@@ -1,12 +1,17 @@
 {
-  "version": "1.20.1",
-  "build": "297",
-  "url": "https://github.com/magistral-ai/mac-releases/releases/download/v1.20.1/Magistral.zip",
-  "sha256": "b82e0870f11d3453795e30925bf388af80ccf00101b508c7e5d87346669788d9",
-  "releaseNotes": "### Corrections\n- Pied de page du tableau de bord : « Magistral — vX.Y.Z » (au lieu de « Magistral AI »)",
+  "version": "1.21.0",
+  "build": "316",
+  "url": "https://github.com/magistral-ai/mac-releases/releases/download/v1.21.0/Magistral.zip",
+  "sha256": "4c633327b0b054b3a06b08d3f3e04031f6f45f48eb3e190e6ec67fb2369afaec",
+  "releaseNotes": "### Nouveautés\n- Compte Magistral obligatoire : connexion par email (code à 6 chiffres), Google ou GitHub — sans compte, l'app est verrouillée (fenêtre, menu barre et Réglages)\n- Plans FREE / FREEMIUM / PREMIUM : l'offre gratuite couvre les tâches planifiées et la surveillance de dossiers ; webhooks, workflows, fichiers audio, dossier partagé et appairage iPhone se débloquent avec l'essai gratuit de 14 jours (une fois par personne) puis l'abonnement Premium\n- Essai FREEMIUM guidé : assistant en 3 étapes (installation de l'app iPhone, appairage par QR code, activation automatique)\n- Paiement Premium directement dans l'app (carte bancaire, 3D Secure intégré) et gestion de l'abonnement intégrée (factures, moyen de paiement, résiliation en fin de période avec date de fin affichée)\n- Carte de compte dans la barre latérale : photo de profil, email, plan, déconnexion\n- Un iPhone appareillé par Mac ; le QR code d'appairage porte l'icône Magistral\n\n### Corrections\n- Crash à l'autorisation ou la fermeture de la fenêtre de connexion Google/GitHub\n- Les droits se rafraîchissent au retour de l'app au premier plan (l'app menu barre ne quitte jamais)\n- « Magistral » remplace « Magistral AI » dans le titre de fenêtre et les textes de l'interface",
   "minimumSystemVersion": "14.0",
-  "publishedAt": "2026-07-06T22:12:13Z",
+  "publishedAt": "2026-07-07T23:48:24Z",
   "history": [
+    {
+      "version": "1.20.1",
+      "releaseNotes": "### Corrections\n- Pied de page du tableau de bord : « Magistral — vX.Y.Z » (au lieu de « Magistral AI »)",
+      "publishedAt": "2026-07-06T22:12:13Z"
+    },
     {
       "version": "1.20.0",
       "releaseNotes": "### Nouveautés\n- **Assistant de création de workflow en 4 étapes** (remplace la génération « tout d'un bloc ») :\n  1. **Décrire** — bouton « Optimiser mon prompt » : Claude réécrit votre description (animation skeleton pendant l'appel), résultat modifiable\n  2. **Plan d'action** — Claude propose le plan étape par étape ; chaque étape est éditable (titre, instruction, suppression), plan régénérable\n  3. **Moteurs** — « Tout confier à Claude » (défaut) ou attribution manuelle : chaque étape peut être confiée à Claude, à l'IA locale par défaut, ou à un modèle local précis\n  4. **Résumé & création** — liste claire de ce qui va être mis en place (webhook + formulaire, dossier surveillé, tâche planifiée…) avec coches en temps réel pendant la création, puis arrivée directe sur la vue de détail\n- Les choix du plan validé (titres, instructions, moteurs) sont garantis dans le workflow final, même si le modèle générateur dévie\n- Le plan d'action se **révèle composant par composant** pendant la génération (streaming) au lieu d'apparaître d'un bloc à la fin\n- Pendant l'optimisation du prompt, le texte d'origine est masqué sous l'animation skeleton",
