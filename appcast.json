@@ -1,12 +1,17 @@
 {
-  "version": "1.24.0",
-  "build": "329",
-  "url": "https://github.com/magistral-ai/macos-releases/releases/download/v1.24.0/Magistral.zip",
-  "sha256": "716628610833afc2122019b568d074b9d074a7247a08506d9ac15ca470caa164",
-  "releaseNotes": "### Nouveautés\n- Nouveau bas de fenêtre « Connecté à la passerelle Magistral » (sans URL technique) : un clic ouvre une fiche indiquant que la passerelle est bien connectée et le nombre d'éléments en file d'attente.\n\n### Corrections\n- Bascule vers le relais officiel plus robuste : le relais est désormais provisionné même si l'analyse des droits rencontre un imprévu.\n- Fiche passerelle : distinction claire entre « aucun élément en file d'attente » et « file indisponible ».",
+  "version": "1.24.1",
+  "build": "331",
+  "url": "https://github.com/magistral-ai/macos-releases/releases/download/v1.24.1/Magistral.zip",
+  "sha256": "1cdc5962c0902c187e4fa9967702e8c31b40b776394f3185c7a901473a8775e7",
+  "releaseNotes": "### Corrections\n- L'onglet Exécutions ne provoque plus de fermeture inattendue après la suppression d'un webhook : les exécutions passées restent consultables. Les historiques déjà touchés sont réparés automatiquement au lancement.",
   "minimumSystemVersion": "14.0",
-  "publishedAt": "2026-07-10T00:59:18Z",
+  "publishedAt": "2026-07-11T18:48:52Z",
   "history": [
+    {
+      "version": "1.24.0",
+      "releaseNotes": "### Nouveautés\n- Nouveau bas de fenêtre « Connecté à la passerelle Magistral » (sans URL technique) : un clic ouvre une fiche indiquant que la passerelle est bien connectée et le nombre d'éléments en file d'attente.\n\n### Corrections\n- Bascule vers le relais officiel plus robuste : le relais est désormais provisionné même si l'analyse des droits rencontre un imprévu.\n- Fiche passerelle : distinction claire entre « aucun élément en file d'attente » et « file indisponible ».",
+      "publishedAt": "2026-07-10T00:59:18Z"
+    },
     {
       "version": "1.23.0",
       "releaseNotes": "### Nouveautés\n- Connexion sécurisée simplifiée : Magistral gère automatiquement le relais (plus aucune URL ou secret à saisir). L'app utilise le relais officiel, fourni de façon sécurisée par le serveur.\n- Appairage iPhone plus clair : une question d'entrée « Avez-vous déjà l'application sur votre smartphone ? » évite toute confusion entre le QR de téléchargement et le QR d'appairage. Le QR de téléchargement affiche désormais le badge « Télécharger dans l'App Store ».\n\n### Corrections\n- Réglages → Connexion : les champs techniques du relais (URL, secret) sont retirés au profit d'une mention « connexion gérée automatiquement ».",
